@@ -1,5 +1,7 @@
 package converter;
 
+import java.util.List;
+
 public class RomanArabicConverter {
 
     public static String arabicToRoman(int arabicNumber) {
@@ -11,14 +13,16 @@ public class RomanArabicConverter {
     }
 
     private static String getRepeatingRomanNumber(int arabicNumber) {
+        List<RomanNumeral> romanNumerals = RomanNumeral.getReverseSortedValues();
+
+        int i = 0;
         String romanNumber = "";
-        while (arabicNumber >= 5) {
-            romanNumber += "V";
-            arabicNumber-=5;
-        }
-        while (arabicNumber >= 1) {
-            romanNumber += "I";
-            arabicNumber--;
+
+        for (RomanNumeral digit : romanNumerals) {
+            while (arabicNumber >= digit.getValue()) {
+                romanNumber += digit.name();
+                arabicNumber -= digit.getValue();
+            }
         }
         return romanNumber;
     }
