@@ -10,22 +10,26 @@ class RomanArabicConverterTest {
     @DisplayName("0 -> empty string")
     @Test
     void testConvertZeroToEmptyString() {
-        String romanNumber = new RomanArabicConverter().arabicToRoman(0);
+        String romanNumber = convertToRoman(0);
         assertEquals("", romanNumber);
     }
 
     @DisplayName("1 -> I")
     @Test
     void testConvertOneToI() {
-        String romanNumber = new RomanArabicConverter().arabicToRoman(1);
+        String romanNumber = convertToRoman(1);
         assertEquals("I", romanNumber);
     }
 
     @DisplayName("2 -> II")
     @Test
     void testConvertTwoToII() {
-        String romanNumber = new RomanArabicConverter().arabicToRoman(2);
+        String romanNumber = convertToRoman(2);
         assertEquals("II", romanNumber);
+    }
+
+    private String convertToRoman(int arabicNumber) {
+        return RomanArabicConverter.arabicToRoman(arabicNumber);
     }
 
 }

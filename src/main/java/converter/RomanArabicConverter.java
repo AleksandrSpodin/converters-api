@@ -2,7 +2,7 @@ package converter;
 
 public class RomanArabicConverter {
 
-    public String arabicToRoman(int arabicNumber) {
+    public static String arabicToRoman(int arabicNumber) {
         boolean zeroNumber = arabicNumber == 0;
         if (zeroNumber) {
             return getDefaultRomanNumber();
@@ -13,7 +13,7 @@ public class RomanArabicConverter {
         return "II";
     }
 
-    private String getDefaultRomanNumber() {
+    private static String getDefaultRomanNumber() {
         return "";
     }
 }
