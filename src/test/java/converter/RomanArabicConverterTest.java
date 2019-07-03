@@ -21,4 +21,11 @@ class RomanArabicConverterTest {
         assertEquals("I", romanNumber);
     }
 
+    @DisplayName("2 -> II")
+    @Test
+    void testConvertTwoToII() {
+        String romanNumber = new RomanArabicConverter().arabicToRoman(2);
+        assertEquals("II", romanNumber);
+    }
+
 }
