@@ -7,10 +7,13 @@ public class RomanArabicConverter {
         if (zeroNumber) {
             return getDefaultRomanNumber();
         }
-        if (arabicNumber==1) {
+        if (arabicNumber == 1) {
             return "I";
         }
-        return "II";
+        if (arabicNumber == 2) {
+            return "II";
+        }
+        return "III";
     }
 
     private static String getDefaultRomanNumber() {
