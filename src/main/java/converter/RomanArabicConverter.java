@@ -12,6 +12,10 @@ public class RomanArabicConverter {
 
     private static String getRepeatingRomanNumber(int arabicNumber) {
         String romanNumber = "";
+        while (arabicNumber >= 5) {
+            romanNumber += "V";
+            arabicNumber-=5;
+        }
         while (arabicNumber >= 1) {
             romanNumber += "I";
             arabicNumber--;
