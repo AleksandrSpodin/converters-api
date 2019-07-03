@@ -12,19 +12,22 @@ public class RomanArabicConverter {
         return getRepeatingRomanNumber(arabicNumber);
     }
 
-    private static String getRepeatingRomanNumber(int arabicNumber) {
+    private static String getRepeatingRomanNumber(int number) {
         List<RomanNumeral> romanNumerals = RomanNumeral.getReverseSortedValues();
 
         int i = 0;
-        String romanNumber = "";
+        StringBuilder sb = new StringBuilder();
 
-        for (RomanNumeral digit : romanNumerals) {
-            while (arabicNumber >= digit.getValue()) {
-                romanNumber += digit.name();
-                arabicNumber -= digit.getValue();
+        while (number > 0 && i < romanNumerals.size()) {
+            RomanNumeral currentSymbol = romanNumerals.get(i);
+            if (currentSymbol.getValue() <= number) {
+                sb.append(currentSymbol.name());
+                number -= currentSymbol.getValue();
+            } else {
+                i++;
             }
         }
-        return romanNumber;
+        return sb.toString();
     }
 
     private static String getDefaultRomanNumber() {
