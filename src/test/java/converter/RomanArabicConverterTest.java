@@ -14,4 +14,11 @@ class RomanArabicConverterTest {
         assertEquals("", romanNumber);
     }
 
+    @DisplayName("1 -> I")
+    @Test
+    void testConvertOneToI() {
+        String romanNumber = new RomanArabicConverter().arabicToRoman(1);
+        assertEquals("I", romanNumber);
+    }
+
 }
