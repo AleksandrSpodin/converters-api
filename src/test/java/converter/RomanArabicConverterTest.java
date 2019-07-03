@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RomanArabicConverterTest {
 
     @ParameterizedTest
-    @CsvSource(value = {"0:''", "1:I", "2:II"}, delimiter = ':')
+    @CsvSource(value = {"0:''", "1:I", "2:II", "3:III"}, delimiter = ':')
     void testConvertArabicToRoman(int input, String expected) {
         String romanNumber = convertToRoman(input);
         assertEquals(expected, romanNumber);
