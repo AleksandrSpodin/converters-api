@@ -3,10 +3,15 @@ package converter;
 public class RomanArabicConverter {
 
     public String arabicToRoman(int arabicNumber) {
-        if (arabicNumber == 0) {
-            return "";
+        boolean zeroNumber = arabicNumber == 0;
+        if (zeroNumber) {
+            return getDefaultRomanNumber();
         } else {
             return "I";
         }
+    }
+
+    private String getDefaultRomanNumber() {
+        return "";
     }
 }
